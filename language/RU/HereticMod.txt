@@ -8,7 +8,7 @@
 		"MOFFEINHERETIC_SKILL_LUNAR_SECONDARY_REPLACEMENT_DESCRIPTION" : "Заряжает шар из лезвий, что переодически наносит <style=cIsDamage>175% урона</style>. После небольшой задержки взрывается и <style=cIsDamage>привязывает</style> всех врагов нанося <style=cIsDamage>700% урона</style>.",
 		"MOFFEINHERETIC_SKILL_LUNAR_SPECIAL_REPLACEMENT_DESCRIPTION" : "Нанесение урона накладывает стаки <style=cIsDamage>разрушения</style>. При активации спосбности <style=cIsDamage>взрывает все стаки разрушения</style> на любом расстоянии, нанося при этом <style=cIsDamage>300% урона</style> плюс <style=cIsDamage>120% урона</style> за каждый стак <style=cIsDamage>разрушения</style>.",
 		
-		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_NAME" : "Неортодоксальное восрешение",
+		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_NAME" : "Неортодоксальное воскрешение",
 		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_DESCRIPTION" : "Сбегите с луны за секретного выжившего."
 	}
 }
