@@ -69,7 +69,10 @@ namespace HereticMod
                             bool shieldOnly = self.body.HasBuff(RoR2Content.Buffs.AffixLunar) || self.body.inventory.GetItemCount(RoR2Content.Items.ShieldOnly) > 0;
                             if (!shieldOnly)
                             {
-                                regenAccumulator -= Time.fixedDeltaTime * (6f + 1.2f * (self.body.level - 1f));
+                                float regen = Time.fixedDeltaTime * (6f + 1.2f * (self.body.level - 1f));
+                                regen /= self.body.cursePenalty;
+
+                                regenAccumulator -= regen;
                             }
                         }
                         return regenAccumulator;
