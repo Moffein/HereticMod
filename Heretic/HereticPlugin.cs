@@ -5,14 +5,15 @@ using R2API;
 using R2API.Utils;
 using RiskOfOptions;
 using RoR2;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 namespace HereticMod
 {
-    [BepInDependency("com.rune580.riskofoptions")]
+    [BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.bepis.r2api")]
-    [BepInPlugin("com.Moffein.Heretic", "Heretic", "1.1.8")]
+    [BepInPlugin("com.Moffein.Heretic", "Heretic", "1.1.10")]
     [R2API.Utils.R2APISubmoduleDependency(nameof(RecalculateStatsAPI), nameof(ContentAddition), nameof(ItemAPI), nameof(PrefabAPI), nameof(LoadoutAPI))]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     public class HereticPlugin : BaseUnityPlugin
@@ -33,10 +34,10 @@ namespace HereticMod
         public void Awake()
         {
             HereticBodyObject = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Heretic/HereticBody.prefab").WaitForCompletion();
+            Assets.Init();
             ReadConfig();
 
             pluginInfo = Info;
-            Assets.Init();
             Tokens.Init();
 
             Skins.InitSkins(HereticBodyObject);
@@ -122,8 +123,19 @@ namespace HereticMod
             HereticPlugin.giveHereticItem = Config.Bind("Gameplay", "Enable Mark of Heresy", true, "Collecting all 4 Heresy items gives you the Mark of Heresy.").Value;
 
             HereticPlugin.fixTypos = Config.Bind("General", "Fix Skill Descriptions", true, "Fixes a typo with Hooks of Heresy and adds color-coding to Essence of Heresy.").Value;
-            HereticPlugin.sortPosition = Config.Bind("General", "Character Select Sort Position", 17f, "Determines which spot this survivor will take in the Character Select menu.").Value;    //set to 14 to go after captain
+            HereticPlugin.sortPosition = Config.Bind("General", "Character Select Sort Position", 14f, "Determines which spot this survivor will take in the Character Select menu.").Value;    //set to 14 to go after captain
             HereticPlugin.squawkButton = Config.Bind("General", "Squawk Button", KeyboardShortcut.Empty, "Press this button to squawk.");
+
+            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.rune580.riskofoptions"))
+            {
+                RiskOfOptionsCompat();
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private void RiskOfOptionsCompat()
+        {
+            ModSettingsManager.SetModIcon(Assets.assetBundle.LoadAsset<Sprite>("texHereticUnlock.png"));
             ModSettingsManager.AddOption(new RiskOfOptions.Options.KeyBindOption(HereticPlugin.squawkButton));
         }
     }
