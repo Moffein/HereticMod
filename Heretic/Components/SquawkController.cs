@@ -40,7 +40,7 @@ namespace HereticMod.Components
         }
 
 
-        public void FixedUpdate()
+        public void Update()
         {
             if (this.hasAuthority)
             {
@@ -53,6 +53,7 @@ namespace HereticMod.Components
                             //EffectManager.SimpleSoundEffect(SquawkController.squawk.index, base.transform.position, true);
                             Util.PlaySound("Play_heretic_squawk", base.gameObject);
                             CmdSquawk();
+                            cooldownStopwatch = 0.15f;
                         }
                         wasPressed = true;
                     }
@@ -63,7 +64,7 @@ namespace HereticMod.Components
                 }
                 else
                 {
-                    cooldownStopwatch -= Time.fixedDeltaTime;
+                    cooldownStopwatch -= Time.deltaTime;
                 }
             }
         }
