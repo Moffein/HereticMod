@@ -42,14 +42,15 @@ namespace HereticMod
                 if (sender.inventory && sender.inventory.GetItemCount(HereticItem.HereticStatBonusItem) > 0)
                 {
                     bool shieldOnly = sender.HasBuff(RoR2Content.Buffs.AffixLunar) || sender.inventory.GetItemCount(RoR2Content.Items.ShieldOnly) > 0;
+                    float adjustedLevel = sender.level - 1f;
                     if (!shieldOnly)
                     {
-                        float adjustedLevel = sender.level - 1f;
                         args.baseRegenAdd -= sender.baseRegen + sender.levelRegen * adjustedLevel;//Negate base regen.
                     }
 
                     args.healthMultAdd += 3f;
-                    args.damageMultAdd += 0.5f;
+
+                    args.baseDamageAdd += 0.5f * (sender.baseDamage + sender.levelDamage * adjustedLevel);
                 }
             };
 
