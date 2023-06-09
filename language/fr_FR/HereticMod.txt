@@ -1,14 +1,14 @@
 {
 	strings:
 	{
-		"MOFFEINHERETIC_PASSIVE_DESCRIPTION" : "LíHÈrÈtique <style=cIsUtility>se dÈplace plus vite</style> et peut <style=cIsUtility>battre des ailes deux fois</style> pour plus de hauteur en vol.",
-		"MOFFEINHERETIC_STATBONUSITEM_NAME" : "Marque de l'HÈrÈsie",
-		"MOFFEINHERETIC_STATBONUSITEM_PICKUP" : "Obtenez une augmentation massive des statistiques... <color=#FF7F7F>MAIS votre santÈ diminue avec le temps.</color>",
-		"MOFFEINHERETIC_STATBONUSITEM_DESC" : "Augmente les <style=cIsHealing>points de vie</style> de <style=cIsHealing>400%</style> et les <style=cIsDamage>dÈg‚ts</style> de <style=cIsDamage>50%</style>. RÈduit la <style=cIsHealing>rÈgÈnÈration de santÈ de base</style> ‡ <style=cIsHealing>-6pv/s</style>.",
-		"MOFFEINHERETIC_SKILL_LUNAR_SECONDARY_REPLACEMENT_DESCRIPTION" : "Charge un projectile qui inflige <style=cIsDamage>175% de dÈg‚ts par seconde</style>. aux ennemis ‡ proximitÈ et explose aprËs 3 secondes pour infliger <style=cIsDamage>700% de dÈg‚ts</style> et <style=cIsDamage>enraciner</style> les ennemis pendant 3 secondes. Se recharge aprËs 5 secondes.",
-		"MOFFEINHERETIC_SKILL_LUNAR_SPECIAL_REPLACEMENT_DESCRIPTION" : "Infliger des dÈg‚ts ajoute un cumul d'<style=cIsDamage>Usure</style>. Activer la compÈtence <style=cIsDamage>fait exploser</style> tout les cumuls d'Usure quelle que soit la portÈe, ce qui inflige <style=cIsDamage>300% de dÈg‚ts</style> ainsi que <style=cIsDamage>120% de dÈg‚ts par cumul d'Usure</style>. Se recharge aprËs 8 secondes.",
+		"MOFFEINHERETIC_PASSIVE_DESCRIPTION" : "L‚ÄôH√©r√©tique <style=cIsUtility>se d√©place plus vite</style> et peut <style=cIsUtility>battre des ailes deux fois</style> pour plus de hauteur en vol.",
+		"MOFFEINHERETIC_STATBONUSITEM_NAME" : "Marque de l'H√©r√©sie",
+		"MOFFEINHERETIC_STATBONUSITEM_PICKUP" : "Obtenez une augmentation massive des statistiques... <color=#FF7F7F>MAIS votre sant√© diminue avec le temps.</color>",
+		"MOFFEINHERETIC_STATBONUSITEM_DESC" : "Augmente les <style=cIsHealing>points de vie</style> de <style=cIsHealing>400%</style> et les <style=cIsDamage>d√©g√¢ts</style> de <style=cIsDamage>50%</style>. R√©duit la <style=cIsHealing>r√©g√©n√©ration de sant√© de base</style> √† <style=cIsHealing>-6pv/s</style>.",
+		"MOFFEINHERETIC_SKILL_LUNAR_SECONDARY_REPLACEMENT_DESCRIPTION" : "Charge un projectile qui inflige <style=cIsDamage>175% de d√©g√¢ts par seconde</style>. aux ennemis √† proximit√© et explose apr√®s 3 secondes pour infliger <style=cIsDamage>700% de d√©g√¢ts</style> et <style=cIsDamage>enraciner</style> les ennemis pendant 3 secondes. Se recharge apr√®s 5 secondes.",
+		"MOFFEINHERETIC_SKILL_LUNAR_SPECIAL_REPLACEMENT_DESCRIPTION" : "Infliger des d√©g√¢ts ajoute un cumul d'<style=cIsDamage>Usure</style>. Activer la comp√©tence <style=cIsDamage>fait exploser</style> tout les cumuls d'Usure quelle que soit la port√©e, ce qui inflige <style=cIsDamage>300% de d√©g√¢ts</style> ainsi que <style=cIsDamage>120% de d√©g√¢ts par cumul d'Usure</style>. Se recharge apr√®s 8 secondes.",
 		
 		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_NAME" : "Ascension de l'Unorthodoxie",
-		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_DESCRIPTION" : "…chappez de la lune en tant que survivant secret."
+		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_DESCRIPTION" : "√âchappez de la lune en tant que survivant secret."
 	}
 }
