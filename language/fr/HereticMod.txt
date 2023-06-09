@@ -8,7 +8,7 @@
 		"MOFFEINHERETIC_SKILL_LUNAR_SECONDARY_REPLACEMENT_DESCRIPTION" : "Charge un projectile qui inflige <style=cIsDamage>175% de dégâts par seconde</style>. aux ennemis à proximité et explose après 3 secondes pour infliger <style=cIsDamage>700% de dégâts</style> et <style=cIsDamage>enraciner</style> les ennemis pendant 3 secondes. Se recharge après 5 secondes.",
 		"MOFFEINHERETIC_SKILL_LUNAR_SPECIAL_REPLACEMENT_DESCRIPTION" : "Infliger des dégâts ajoute un cumul d'<style=cIsDamage>Usure</style>. Activer la compétence <style=cIsDamage>fait exploser</style> tout les cumuls d'Usure quelle que soit la portée, ce qui inflige <style=cIsDamage>300% de dégâts</style> ainsi que <style=cIsDamage>120% de dégâts par cumul d'Usure</style>. Se recharge après 8 secondes.",
 		
-		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_NAME" : "Ascension peu orthodoxe",
+		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_NAME" : "Résurrection peu orthodoxe",
 		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_DESCRIPTION" : "Échappez de la lune en tant que survivant secret."
 	}
 }
