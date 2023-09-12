@@ -1,0 +1,14 @@
+{
+	strings:
+	{
+		"MOFFEINHERETIC_PASSIVE_DESCRIPTION" : "Die Ketzerin bewegt sich <style=cIsUtility>bewegt sich flinker</style> und kann <style=cIsUtility>zwei Mal mit ihren Flügeln schlagen</style> für extra Auftrieb in der Luft.",
+		"MOFFEINHERETIC_STATBONUSITEM_NAME" : "Zeichen der Ketzerei",
+		"MOFFEINHERETIC_STATBONUSITEM_PICKUP" : "Erhöht deine Stats massiv... <color=#FF7F7F>ABER deine Gesundheit nimmt mit der Zeit ab.</color>",
+		"MOFFEINHERETIC_STATBONUSITEM_DESC" : "Erhöht <style=cIsHealing>Gesundheit</style> um <style=cIsHealing>400%</style> und <style=cIsDamage>Schaden</style> um <style=cIsDamage>50%</style>. Verringert <style=cIsHealing>Lebensregeneration</style> auf <style=cIsHealing>-6hp/s</style>.",
+		"MOFFEINHERETIC_SKILL_LUNAR_SECONDARY_REPLACEMENT_DESCRIPTION" : "Lade eine Sphäre aus Klingen auf, welche wiederholt <style=cIsDamage>175% Schaden</style> verursacht, nach kurzer Zeit explodiert, alle getroffenen Gegner <style=cIsDamage>verwurzelt</style> und ihnen <style=cIsDamage>700% Schaden</style> zufügt.",
+		"MOFFEINHERETIC_SKILL_LUNAR_SPECIAL_REPLACEMENT_DESCRIPTION" : "Wenn du Schaden austeilst, erhälst du einen Stapel <style=cIsDamage>Verfall</style>. Einsetzen der Fähigkeit lässt <style=cIsDamage>alle Stapel Verfall detonieren</style> (unbegrenzte Reichweite), wodurch <style=cIsDamage>300% Schaden</style> und zusätzlich <style=cIsDamage>120% Schaden</style> pro Stapel von <style=cIsDamage>Verfall</style> verursacht werden.",
+		
+		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_NAME" : "Unorthodoxes Auferstehen",
+		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_DESCRIPTION" : "Entkomme vom Mond als der geheimnisvolle Überlebende."
+	}
+}
