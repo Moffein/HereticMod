@@ -1,0 +1,14 @@
+{
+	strings:
+	{
+		"MOFFEINHERETIC_PASSIVE_DESCRIPTION" : "O Herege <style=cIsUtility>move-se rapidamente</style> e pode <style=cIsUtility>bater suas asas duas vezes</style> para atingir lugares altos enquanto estiver no ar.",
+		"MOFFEINHERETIC_STATBONUSITEM_NAME" : "Marca da Heresia",
+		"MOFFEINHERETIC_STATBONUSITEM_PICKUP" : "Ganha um grande impulso nas suas estatísticas... <color=#FF7F7F>MAS sua vida decai com o tempo.</color>",
+		"MOFFEINHERETIC_STATBONUSITEM_DESC" : "Aumenta a <style=cIsHealing>saúde</style> em <style=cIsHealing>400%</style> e o <style=cIsDamage>dano</style> em <style=cIsDamage>50%</style>. Reduz a <style=cIsHealing>regeneração base de saúde</style> para <style=cIsHealing>-6hp/s</style>.",
+		"MOFFEINHERETIC_SKILL_LUNAR_SECONDARY_REPLACEMENT_DESCRIPTION" : "Carregue uma esfera de lâminas que causa <style=cIsDamage>175%</style> de dano repetidamente. Após um tempo, ela explode e <style=cIsDamage>enraíza</style> todos os inimigos, causando <style=cIsDamage>700%</style>de dano.",
+		"MOFFEINHERETIC_SKILL_LUNAR_SPECIAL_REPLACEMENT_DESCRIPTION" : "Causar dano adiciona um acúmulo de <style=cIsDamage>Ruína</style>. Ativar a habilidade <style=cIsDamage>detona todos os acúmulos de Ruína</style> a um alcance limitado, causando <style=cIsDamage>300% de dano</style> mais <style=cIsDamage>120% de dano</style> por acúmulo de <style=cIsDamage>Ruína</style>.",
+		
+		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_NAME" : "Heterodoxia Elevada ",
+		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_DESCRIPTION" : "Escape da lua com o sobrevivente secreto."
+	}
+}
