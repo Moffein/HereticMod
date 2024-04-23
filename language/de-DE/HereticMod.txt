@@ -9,6 +9,6 @@
 		"MOFFEINHERETIC_SKILL_LUNAR_SPECIAL_REPLACEMENT_DESCRIPTION" : "Wenn du Schaden austeilst, erhälst du einen Stapel <style=cIsDamage>Verfall</style>. Einsetzen der Fähigkeit lässt <style=cIsDamage>alle Stapel Verfall detonieren</style> (unbegrenzte Reichweite), wodurch <style=cIsDamage>300% Schaden</style> und zusätzlich <style=cIsDamage>120% Schaden</style> pro Stapel von <style=cIsDamage>Verfall</style> verursacht werden.",
 		
 		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_NAME" : "Unorthodoxes Auferstehen",
-		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_DESCRIPTION" : "Entkomme vom Mond als die geheimnisvolle Überlebende."
+		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_DESCRIPTION" : "Entkomme vom Mond als der geheimnisvolle Überlebende."
 	}
 }
