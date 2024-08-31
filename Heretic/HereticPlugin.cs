@@ -11,10 +11,14 @@ using UnityEngine.AddressableAssets;
 
 namespace HereticMod
 {
+    [BepInDependency(R2API.R2API.PluginGUID)]
+    [BepInDependency(R2API.RecalculateStatsAPI.PluginGUID)]
+    [BepInDependency(R2API.ContentManagement.R2APIContentManager.PluginGUID)]
+    [BepInDependency(R2API.ItemAPI.PluginGUID)]
+    [BepInDependency(R2API.PrefabAPI.PluginGUID)]
+    [BepInDependency(R2API.LoadoutAPI.PluginGUID)]
     [BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInDependency("com.bepis.r2api")]
-    [BepInPlugin("com.Moffein.Heretic", "Heretic", "1.2.0")]
-    [R2API.Utils.R2APISubmoduleDependency(nameof(RecalculateStatsAPI), nameof(ContentAddition), nameof(ItemAPI), nameof(PrefabAPI), nameof(LoadoutAPI))]
+    [BepInPlugin("com.Moffein.Heretic", "Heretic", "1.2.5")]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     public class HereticPlugin : BaseUnityPlugin
     {
@@ -51,11 +55,12 @@ namespace HereticMod
             HereticItem.Init();
 
             On.RoR2.CameraRigController.OnEnable += DisableLobbyFade;
-            On.RoR2.SurvivorCatalog.Init += (orig) =>
-            {
-                orig();
-                HereticBodyIndex = BodyCatalog.FindBodyIndex("HereticBody");
-            };
+            RoR2Application.onLoad += OnLoad;
+        }
+
+        private void OnLoad()
+        {
+            HereticBodyIndex = BodyCatalog.FindBodyIndex("HereticBody");
         }
 
         public static void DisableLobbyFade(On.RoR2.CameraRigController.orig_OnEnable orig, CameraRigController self)

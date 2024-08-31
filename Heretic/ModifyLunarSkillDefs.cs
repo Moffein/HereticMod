@@ -2,10 +2,12 @@
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using RoR2;
+using RoR2.Skills;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Networking;
 
 namespace HereticMod
@@ -29,41 +31,23 @@ namespace HereticMod
 
         private static void SetupPrimary()
         {
-            //Replace the vanilla cooldown with a reload system.
             if (HereticPlugin.visionsAttackSpeed)
             {
-                On.EntityStates.GlobalSkills.LunarNeedle.FireLunarNeedle.OnEnter += (orig, self) =>
-                {
-                    orig(self);
-
-                    VisionsReloader visRel = self.GetComponent<VisionsReloader>();
-                    if (visRel) visRel.FireSkill();
-                };
-                HereticPlugin.HereticBodyObject.AddComponent<VisionsReloader>();
-                RoR2.CharacterBody.onBodyInventoryChangedGlobal += AddVisionsReloader;
-
-                On.RoR2.Skills.LunarPrimaryReplacementSkill.GetRechargeInterval += (orig, self, skillSlot) =>
-                {
-                    return 0f;
-                };
-
-                On.RoR2.Skills.LunarPrimaryReplacementSkill.GetRechargeStock += (orig, self, skillSlot) =>
-                {
-                    return 0;
-                };
+                LunarPrimaryReplacementSkill visionsDef = Addressables.LoadAssetAsync<LunarPrimaryReplacementSkill>("RoR2/Base/LunarSkillReplacements/LunarPrimaryReplacement.asset").WaitForCompletion();
+                visionsDef.attackSpeedBuffsRestockSpeed = true;
+                visionsDef.attackSpeedBuffsRestockSpeed_Multiplier = 1f;
             }
-            else //At 0 stacks of the item, behave like there is 1 stack.
+            
+            //At 0 stacks of the item, behave like there is 1 stack.
+            On.RoR2.Skills.LunarPrimaryReplacementSkill.GetRechargeInterval += (orig, self, skillSlot) =>
             {
-                On.RoR2.Skills.LunarPrimaryReplacementSkill.GetRechargeInterval += (orig, self, skillSlot) =>
+                float interval = self.baseRechargeInterval;
+                if (skillSlot && skillSlot.characterBody && skillSlot.characterBody.inventory)
                 {
-                    float interval = self.baseRechargeInterval;
-                    if (skillSlot && skillSlot.characterBody && skillSlot.characterBody.inventory)
-                    {
-                        interval = Mathf.Max(orig(self, skillSlot), interval);
-                    }
-                    return interval;
-                };
-            }
+                    interval = Mathf.Max(orig(self, skillSlot), interval);
+                }
+                return interval;
+            };
 
             On.RoR2.Skills.LunarPrimaryReplacementSkill.GetMaxStock += (orig, self, skillSlot) =>
             {
@@ -74,15 +58,6 @@ namespace HereticMod
                 }
                 return maxStock;
             };
-        }
-
-        private static void AddVisionsReloader(CharacterBody body)
-        {
-            if (body.bodyIndex != HereticPlugin.HereticBodyIndex && body.inventory && body.inventory.GetItemCount(RoR2Content.Items.LunarPrimaryReplacement.itemIndex) > 0)
-            {
-                VisionsReloader visRel = body.GetComponent<VisionsReloader>();
-                if (!visRel) body.gameObject.AddComponent<VisionsReloader>();
-            }
         }
 
         private static void SetupSecondary()
@@ -97,7 +72,7 @@ namespace HereticMod
                 return interval;
             };
 
-            IL.RoR2.GlobalEventManager.OnHitEnemy += (il) =>
+            IL.RoR2.GlobalEventManager.ProcessHitEnemy += (il) =>
             {
                 ILCursor c = new ILCursor(il);
                 c.GotoNext(MoveType.After,
@@ -172,35 +147,6 @@ namespace HereticMod
                     orig(self, skillSlot);
                 }
             };
-
-            //On.RoR2.GlobalEventManager.OnHitEnemy += ApplyRuin;
         }
-
-        /*private static void ApplyRuin(On.RoR2.GlobalEventManager.orig_OnHitEnemy orig, GlobalEventManager self, DamageInfo damageInfo, GameObject victim)
-        {
-            orig(self, damageInfo, victim);
-            if (NetworkServer.active && !damageInfo.rejected && victim && damageInfo.procCoefficient > 0f)
-            {
-                if (damageInfo.attacker)
-                {
-                    CharacterBody attackerBody = damageInfo.attacker.GetComponent<CharacterBody>();
-                    if (attackerBody && attackerBody.bodyIndex == HereticPlugin.HereticBodyIndex)
-                    {
-                        if ((!attackerBody.inventory || attackerBody.inventory.GetItemCount(RoR2Content.Items.LunarSpecialReplacement) <= 0) && attackerBody.skillLocator && attackerBody.skillLocator.special.skillDef == CharacterBody.CommonAssets.lunarSpecialReplacementSkillDef)
-                        {
-                            CharacterBody victimBody = victim.GetComponent<CharacterBody>();
-                            if (victimBody)
-                            {
-                                if (Util.CheckRoll(100f * damageInfo.procCoefficient, attackerBody.master))
-                                {
-                                    Debug.Log("Override code");
-                                    victimBody.AddTimedBuff(RoR2Content.Buffs.LunarDetonationCharge, 10f);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }*/
     }
 }

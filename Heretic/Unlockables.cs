@@ -3,8 +3,8 @@ using RoR2.Achievements;
 
 namespace Heretic
 {
-
-    [RegisterAchievement("MoffeinHereticUnlock", "Survivors.MoffeinHeretic", null, null)]
+    //Give 10 coins so it covers the cost of purchasing the lunars.
+    [RegisterAchievement("MoffeinHereticUnlock", "Survivors.MoffeinHeretic", null, 10u, null)]
     public class HereticUnlockAchievement : BaseEndingAchievement
     {
 
