@@ -18,7 +18,7 @@ namespace HereticMod
     [BepInDependency(R2API.PrefabAPI.PluginGUID)]
     [BepInDependency(R2API.LoadoutAPI.PluginGUID)]
     [BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInPlugin("com.Moffein.Heretic", "Heretic", "1.2.5")]
+    [BepInPlugin("com.Moffein.Heretic", "Heretic", "1.2.6")]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     public class HereticPlugin : BaseUnityPlugin
     {
