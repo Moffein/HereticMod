@@ -33,32 +33,14 @@ namespace HereticMod
         {
             if (HereticPlugin.visionsAttackSpeed)
             {
+                LunarPrimaryReplacementSkill visionsDef = Addressables.LoadAssetAsync<LunarPrimaryReplacementSkill>("RoR2/Base/LunarSkillReplacements/LunarPrimaryReplacement.asset").WaitForCompletion();
+                visionsDef.attackSpeedBuffsRestockSpeed = true;
+                visionsDef.attackSpeedBuffsRestockSpeed_Multiplier = 1f;
 
-                if (!BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Moffein.RiskyTweaks"))
-                {
-                    LunarPrimaryReplacementSkill visionsDef = Addressables.LoadAssetAsync<LunarPrimaryReplacementSkill>("RoR2/Base/LunarSkillReplacements/LunarPrimaryReplacement.asset").WaitForCompletion();
-                    visionsDef.attackSpeedBuffsRestockSpeed = true;
-                    visionsDef.attackSpeedBuffsRestockSpeed_Multiplier = 1f;
-
-                    //LunarPrimaryReplacement overrides the attackSpeedBuffsRestockSpeed stat
-                    On.RoR2.Skills.LunarPrimaryReplacementSkill.GetRechargeInterval += LunarPrimaryReplacementSkill_GetRechargeInterval;
-                }
-                else
-                {
-                    Debug.LogWarning("Heretic: Skipping Visions attack speed changes because RiskyTweaks is installed.");
-                }
             }
-            
-            //At 0 stacks of the item, behave like there is 1 stack.
-            On.RoR2.Skills.LunarPrimaryReplacementSkill.GetRechargeInterval += (orig, self, skillSlot) =>
-            {
-                float interval = self.baseRechargeInterval;
-                if (skillSlot && skillSlot.characterBody && skillSlot.characterBody.inventory)
-                {
-                    interval = Mathf.Max(orig(self, skillSlot), interval);
-                }
-                return interval;
-            };
+
+            //LunarPrimaryReplacement overrides the attackSpeedBuffsRestockSpeed stat
+            On.RoR2.Skills.LunarPrimaryReplacementSkill.GetRechargeInterval += LunarPrimaryReplacementSkill_GetRechargeInterval;
 
             On.RoR2.Skills.LunarPrimaryReplacementSkill.GetMaxStock += (orig, self, skillSlot) =>
             {
@@ -73,8 +55,14 @@ namespace HereticMod
 
         private static float LunarPrimaryReplacementSkill_GetRechargeInterval(On.RoR2.Skills.LunarPrimaryReplacementSkill.orig_GetRechargeInterval orig, LunarPrimaryReplacementSkill self, RoR2.GenericSkill skillSlot)
         {
-            float interval = orig(self, skillSlot);
+            //Fix cooldown at 0 stacks
+            float interval = self.baseRechargeInterval;
+            if (skillSlot && skillSlot.characterBody && skillSlot.characterBody.inventory)
+            {
+                interval = Mathf.Max(orig(self, skillSlot), interval);
+            }
 
+            //Apply attack speed scaling if enabled
             if (self.attackSpeedBuffsRestockSpeed && skillSlot)
             {
                 float num = skillSlot.characterBody.attackSpeed - skillSlot.characterBody.baseAttackSpeed;
