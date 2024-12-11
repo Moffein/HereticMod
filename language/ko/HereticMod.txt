@@ -1,0 +1,14 @@
+{
+	strings:
+	{
+		"MOFFEINHERETIC_PASSIVE_DESCRIPTION" : "이단자는 <style=cIsUtility>더 빠르게 움직이고</style> 공중에서 <style=cIsUtility>추가로 두 번 점프</style>할 수 있습니다.",
+		"MOFFEINHERETIC_STATBONUSITEM_NAME" : "이단의 표식",
+		"MOFFEINHERETIC_STATBONUSITEM_PICKUP" : "스텟이 크게 증가합니다... <color=#FF7F7F>하지만 지속적으로 체력이 감소합니다.</color>",
+		"MOFFEINHERETIC_STATBONUSITEM_DESC" : "<style=cIsHealing>체력</style>이 <style=cIsHealing>+400% <style=cIsDamage>피해</style>가 <style=cIsDamage>+50%</style> 증가합니다. <style=cIsHealing>기본 체력 회복량</style>을 <style=cIsHealing>초당 -6</style>으로 만듭니다.",
+		"MOFFEINHERETIC_SKILL_LUNAR_SECONDARY_REPLACEMENT_DESCRIPTION" : "<style=cIsDamage>175%</style> 피해를 입히는 칼날들로 이루어진 공을 충전합니다. 잠시 지연된 후에 폭발하여 모든 적에게 <style=cIsDamage>700%</style> 피해를 입히고 <style=cIsDamage>발을 묶습니다</style>.",
+		"MOFFEINHERETIC_SKILL_LUNAR_SPECIAL_REPLACEMENT_DESCRIPTION" : "피해를 입히면 <style=cIsDamage>붕괴</style> 중첩 한 개를 추가시킵니다. 이 스킬을 발동하면 <style=cIsDamage>모든 붕괴 중첩</style>이 무한 범위로 폭발하여, <style=cIsDamage>300%</style> 피해를 입히고 추가로 <style=cIsDamage>붕괴</style> 중첩 하나당 <style=cIsDamage>120%</style> 피해를 입힙니다.",
+		
+		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_NAME" : "이단의 부활",
+		"ACHIEVEMENT_MOFFEINHERETICUNLOCK_DESCRIPTION" : "숨겨진 생존자로 달을 탈출하세요."
+	}
+}
