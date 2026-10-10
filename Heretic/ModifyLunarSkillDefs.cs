@@ -94,7 +94,7 @@ namespace HereticMod
                 ILCursor c = new ILCursor(il);
                 c.GotoNext(MoveType.After,
                          x => x.MatchLdsfld(typeof(RoR2.RoR2Content.Items), "LunarSecondaryReplacement"),
-                         x => x.MatchCallvirt<RoR2.Inventory>("GetItemCount")
+                         x => x.MatchCallvirt<RoR2.Inventory>("GetItemCountEffective")
                          );
                 c.EmitDelegate<Func<int, int>>(itemCount =>
                 {
@@ -115,7 +115,7 @@ namespace HereticMod
                 ILCursor c = new ILCursor(il);
                 c.GotoNext(MoveType.After,
                          x => x.MatchLdsfld(typeof(RoR2.RoR2Content.Items), "LunarUtilityReplacement"),
-                         x => x.MatchCallvirt<RoR2.Inventory>("GetItemCount")
+                         x => x.MatchCallvirt<RoR2.Inventory>("GetItemCountEffective")
                          );
                 c.EmitDelegate<Func<int, int>>(itemCount =>
                {

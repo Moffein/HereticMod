@@ -32,7 +32,9 @@ namespace HereticMod
                 ItemTag.WorldUnique,
                 ItemTag.BrotherBlacklist,
                 ItemTag.CannotSteal,
-                ItemTag.CannotDuplicate
+                ItemTag.CannotDuplicate,
+                ItemTag.ExtractorUnitBlacklist,
+                ItemTag.RebirthBlacklist
             };
             ItemDisplayRule[] idr = new ItemDisplayRule[0];
             ItemAPI.Add(new CustomItem(HereticStatBonusItem, idr));

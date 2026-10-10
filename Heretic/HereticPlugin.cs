@@ -18,7 +18,7 @@ namespace HereticMod
     [BepInDependency(R2API.PrefabAPI.PluginGUID)]
     [BepInDependency(R2API.LoadoutAPI.PluginGUID)]
     [BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInPlugin("com.Moffein.Heretic", "Heretic", "1.2.8")]
+    [BepInPlugin("com.Moffein.Heretic", "Heretic", "1.2.11")]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     public class HereticPlugin : BaseUnityPlugin
     {
@@ -128,7 +128,7 @@ namespace HereticMod
             HereticPlugin.giveHereticItem = Config.Bind("Gameplay", "Enable Mark of Heresy", true, "Collecting all 4 Heresy items gives you the Mark of Heresy.").Value;
 
             HereticPlugin.fixTypos = Config.Bind("General", "Fix Skill Descriptions", true, "Fixes a typo with Hooks of Heresy and adds color-coding to Essence of Heresy.").Value;
-            HereticPlugin.sortPosition = Config.Bind("General", "Character Select Sort Position", 14f, "Determines which spot this survivor will take in the Character Select menu.").Value;    //set to 14 to go after captain
+            HereticPlugin.sortPosition = Config.Bind("General", "Character Select Sort Position", 13.5f, "Determines which spot this survivor will take in the Character Select menu.").Value;    //set to 14 to go after captain
             HereticPlugin.squawkButton = Config.Bind("General", "Squawk Button", KeyboardShortcut.Empty, "Press this button to squawk.");
 
             if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.rune580.riskofoptions"))

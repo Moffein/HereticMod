@@ -363,4 +363,8 @@
     </Reference>
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="call &quot;$(ProjectDir)postbuild.bat&quot;" />
+  </Target>
+
 </Project>
